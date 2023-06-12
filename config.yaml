@@ -1,0 +1,39 @@
+#root directory
+root_dir: ..
+root: myapp2
+#package name
+pkg_name: my_pkg
+#which folder structure you want
+project_structure: type2
+#types of folder structure
+folder_structure:
+    type1:
+        chain1: bin/__init__.py
+        chain2: core/[gui_funcs,cum_widgets]/__init__.py
+        chain3: res/[config, icon, ui]
+        chain4: util/log_util/__init__.py
+    type2:
+        chain1: bin/__init__.py
+        chain2: core/[gui_funcs, cum_widgets, database_operations, rest_apis, computation_models, data_analysis]/__init__.py 
+        chain3: res/[ui, config, icon]
+        chain4: doc/[examples, sample_data, readme]
+        chain5: util/[log_util, gui_util, thread_util, mpi_util]/__init__.py
+#setup.py config
+setup:
+    name: my_pkg
+    version: 0.1.0
+    description: my app is super cool
+    author: Jackey Qiu
+    author_email: canrong.qiu@desy.de
+    url: https://github.com/jackey-qiu/myapp
+    classifiers:
+        Topic: pyqt5 application
+        Programming Language: Python
+    #license type: Apache_L2, Boost_SL1, GNU_AGPLv3, GNU_GPLv3, GNU_LGPLv3, MIT, Mozilla_PL2, Unlicense
+    license: MIT
+    install_requires: PyQt5, numpy
+    entry_points:
+        console_scripts:
+            app_launcher: bin.app_gui.main
+
+
